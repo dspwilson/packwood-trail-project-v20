@@ -1,0 +1,122 @@
+@charset "utf-8";
+/*---------------------------------------
+/  Packwood Trail Project Navigation css
+/
+/  Derek S Wilson
+/  June 2018
+/
+/  Description: css for responsive navigation
+/
+/----------------------------------------*/
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+/* Float the list items side by side */
+ul.topnav li {float: left;}
+
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+/*    color: #f2f2f2;*/
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1em;
+}
+
+/* Change background color of links on hover */
+ul#topnavLinks.topnav li a:hover {
+/*    background-color: #555;*/
+/*      background-color: cadetblue; */
+      color: skyblue;
+}
+
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+    
+ul#topnavLinks.topnav {
+/*    background-color: darkcyan;*/
+    width: 85%;
+    float: left;
+}
+    
+ul#topnavIcon.topnav {
+/*    background-color: darkcyan;*/
+    width: 15%;
+}
+    
+ul.topnav li.icon {
+    display: inline-block;
+    float: right;
+   }
+    
+ul#topnavLinks.topnav li a {
+    font-size: 100%; /* smaller screen, smaller text */
+    }
+    
+ul#topnavIcon.topnav li a {
+    font-size: 85.5%; /* this was dialed in using dev tools */
+    }
+    
+/* this hides links not the first link */
+ul#topnavLinks.topnav li:not(:first-child) {display: none;}
+    
+    
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+
+@media screen and (max-width:680px) {
+ 
+  ul#topnavLinks.topnav.responsive {
+      position: absolute;
+      width: 25%;
+/*      background-color: darkcyan;*/
+      opacity: .85;
+  }
+    
+  ul#topnavIcon.topnav.responsive {
+/*    background-color: firebrick;*/
+    width: 100%;
+  }
+    
+  ul#topnavLinks.topnav.responsive li {
+    float: none;  /* probably don't need, but OK */
+    display: inline;
+/*    background-color: darkslategray;*/
+  }
+
+  ul#topnavIcon.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+    
+  ul#topnavLinks.topnav.responsive li a {
+    display: block;
+    text-align: left;
+    font-size: 100%;
+    opacity: 1; 
+  }
+    
+  ul#topnavIcon.topnav.responsive li a {
+    display: block;
+    text-align: right;
+    font-size: 85.5%; /* smaller text on smaller screen */
+  }
+
+}
+
+
